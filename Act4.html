@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividad 4 - Instalación y configuración de dispositivos de RED</title>
+<link rel="stylesheet" href="estilos/styles4.css">
+<script src="js/script4.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Actividad 4: Instalación y configuración de dispositivos de RED</h1>
+    <p>Darius Fer · Sergio Bonafonte · Adrian Cieras</p>
+</header>
+
+<nav class="file-search-bar">
+    <input 
+        type="text" 
+        id="fileSearch" 
+        placeholder="Buscar archivo..."
+        onkeyup="filterFiles()"
+    >
+
+    <div id="fileList">
+        <a href="actividad1.html">Actividad 1</a>
+        <a href="actividad2.html">Actividad 2</a>
+        <a href="actividad3.html">Actividad 3</a>
+        <a href="actividad4.html">Actividad 4</a>
+    </div>
+</nav>
+
+<main>
+
+    <section>
+        <h2>Introducción</h2>
+        <p><strong>Actividad 4:</strong> Instalación y configuración de dispositivos de RED.</p>
+        <p>Curso 2025/26 - Prácticas.</p>
+        <p>En esta actividad realizaremos la configuración completa de un switch y un router, creando VLANs, configurando direcciones IP y habilitando servicios de red.</p>
+    </section>
+
+    <section>
+        <h2>Configuración del Switch</h2>
+        <p>Para acceder a la interfaz gráfica del switch lo primero será cambiar la IP para que podamos conectarnos correctamente.</p>
+        <p>Desde cualquier navegador ponemos la puerta de enlace en el buscador.</p>
+        <p>Se abrirá una página donde deberemos introducir:</p>
+        <p><strong>Usuario:</strong> admin</p>
+        <p><strong>Contraseña:</strong> Campusfp1234</p>
+    </section>
+
+    <section>
+        <h2>Configuración de VLAN</h2>
+        <p>En la pestaña <strong>L2 FEATURES</strong> iremos a VLAN y pulsaremos <strong>Add</strong>.</p>
+        <p>Asignaremos:</p>
+        <p><strong>ID:</strong> 70</p>
+        <p><strong>Nombre VLAN:</strong> DARIUS</p>
+        <p>Seleccionaremos el puerto conectado al router y los puertos usados para servidor y PC.</p>
+        <p>Finalmente pulsamos <strong>Create</strong>.</p>
+        <p>Después vamos a <strong>Port Config</strong> y asignamos los puertos a la VLAN creada.</p>
+    </section>
+
+    <section>
+        <h2>Configuración del Router</h2>
+        <p>Primero creamos las interfaces VLAN desde:</p>
+        <p><strong>Interface > VLAN > botón +</strong></p>
+        <p>Asignamos:</p>
+        <p>- Nombre de la VLAN</p>
+        <p>- ID de VLAN</p>
+        <p>- Interfaz: bridgeLocal</p>
+    </section>
+
+    <section>
+        <h2>Configuración IP y DHCP</h2>
+        <p>Para asignar direcciones IP vamos a:</p>
+        <p><strong>IP > Addresses > botón +</strong></p>
+        <p>Añadimos la dirección IP correspondiente a cada interfaz.</p>
+
+        <p>Después configuramos DHCP desde:</p>
+        <p><strong>IP > DHCP Server > DHCP Setup</strong></p>
+
+        <p>Configuramos:</p>
+        <p>- Dirección IP y máscara</p>
+        <p>- Puerta de enlace</p>
+        <p>- DNS de Google</p>
+    </section>
+
+    <section>
+        <h2>Configuración del Bridge</h2>
+        <p>Para configurar el bridge vamos a:</p>
+        <p><strong>Bridge > VLANs > botón +</strong></p>
+        <p>Agregamos:</p>
+        <p>- El Bridge principal</p>
+        <p>- El puerto físico ether3</p>
+        <p>Guardamos cambios y verificamos conectividad.</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Realizado por: Darius Fer, Sergio Bonafonte y Adrian Cieras</p>
+</footer>
+
+</body>
+</html>
