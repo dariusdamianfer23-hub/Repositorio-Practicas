@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2 – Planificación de las prácticas (OCS)</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container img {
+            max-width: 100%;
+            display: block;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .container pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 12px 16px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.85em;
+        }
+        .container code {
+            font-family: 'Courier New', monospace;
+        }
+        section { margin-bottom: 40px; }
+        h2 { border-left: 4px solid #222; padding-left: 10px; }
+        h3 { margin-top: 24px; }
+    </style>
+</head>
+<body>
+
+
+
+<div class="container">
+
+    <h1>Actividad 2 &ndash; Planificación de las prácticas</h1>
+    <p><strong>Nombre:</strong> Darius Fer, Sergio Bonafonte, Adrián Cieras</p>
+    <hr>
+
+    <!-- ===== INSTALACIÓN ===== -->
+    <section id="instalacion">
+        <h2>INSTALACION</h2>
+
+        <p>Ejecutamos el comando apt -y install libxml-simple-perl libdbi-perl libdbd-mysql-perl libapache-dbi-perl libnet-ip-perl libsoap-lite-perl libarchive-zip-perl make build-essential libio-compress-perl nano</p>
+        <pre><code>apt -y install libxml-simple-perl libdbi-perl libdbd-mysql-perl libapache-dbi-perl libnet-ip-perl libsoap-lite-perl libarchive-zip-perl make build-essential libio-compress-perl nano</code></pre>
+        <img src="imagenes/Imagen1.png" alt="Imagen1">
+
+        <p>Ahora ejecutamos el comando cpan install XML::Entities</p>
+        <pre><code>cpan install XML::Entities</code></pre>
+        <img src="imagenes/Imagen2.png" alt="Imagen2">
+
+        <p>Ahora ejecutamos perl -MCPAN -e 'install Mojolicious'</p>
+        <pre><code>perl -MCPAN -e 'install Mojolicious'</code></pre>
+        <img src="imagenes/Imagen3.png" alt="Imagen3">
+        
+
+        <p>Ahora ejecutamos el comando perl -MCPAN -e 'install Switch'</p>
+        <pre><code>perl -MCPAN -e 'install Switch'</code></pre>
+        <img src="imagenes/Imagen4.png" alt="Imagen5">
+
+        <p>Ahora ejecutamos el comando perl -MCPAN -e 'install Plack::Handler'</p>
+        <pre><code>perl -MCPAN -e 'install Plack::Handler'</code></pre>
+         <img src="imagenes/Imagen5.png" alt="Imagen5">
+    </section>
+
+    <hr>
+
+    <!-- ===== APACHE ===== -->
+    <section id="apache">
+        <h2>INSTALACION APACHE</h2>
+
+        <p>Ejecutamos el comando apt install apache2 -y</p>
+        <pre><code>apt install apache2 -y</code></pre>
+        <img src="imagenes/Imagen6.png" alt="Imagen6">
+
+        <p>Ejecutamos el comando apt install software-properties-common ca-certificates lsb-release apt-transport-https -y</p>
+        <pre><code>apt install software-properties-common ca-certificates lsb-release apt-transport-https -y</code></pre>
+        <img src="imagenes/Imagen7.png" alt="Imagen7">
+
+        <p>Ejecutamos el comando LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php</p>
+        <pre><code>LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php</code></pre>
+        <img src="imagenes/Imagen8.png" alt="Imagen8">
+
+        <p>Ahora ejecutamos un apt-update</p>
+        <pre><code>apt update</code></pre>
+        <img src="imagenes/Imagen9.png" alt="Imagen9">
+
+        <p>Ahora ejecutamos apt install php7.4 -y</p>
+        <pre><code>apt install php7.4 -y</code></pre>
+        <img src="imagenes/Imagen10.png" alt="Imagen10">
+    </section>
+
+    <hr>
+
+    <!-- ===== PHP ===== -->
+    <section id="php">
+        <h2>Instalación de PHP 7.4</h2>
+
+        <p>Ejecutamos el comando apt install php7.4-mysql php7.4-zip php7.4-gd php7.4-mbstring php7.4-curl php7.4-xml php7.4-soap -y</p>
+        <pre><code>apt install php7.4-mysql php7.4-zip php7.4-gd php7.4-mbstring php7.4-curl php7.4-xml php7.4-soap -y</code></pre>
+        <img src="imagenes/Imagen11.png" alt="Imagen11">
+
+        <p>Ahora ejecutamos el comando a2enmod perl</p>
+        <pre><code>a2enmod perl</code></pre>
+        <img src="imagenes/Imagen12.png" alt="Imagen12">
+
+        <p>Ejecutamos el siguiente comando nano /etc/php/7.4/apache2/php.ini</p>
+        <pre><code>nano /etc/php/7.4/apache2/php.ini</code></pre>
+        <img src="imagenes/Imagen13.png" alt="Imagen13">
+
+        <p>Y buscamos short_open_tag = off y lo ponemos en on</p>
+        <img src="imagenes/Imagen14.png" alt="Imagen14">
+        <img src="imagenes/Imagen15.png" alt="Imagen15">
+
+        <p>Ahora buscamos post_max_size = 8M, y hay que cambiarlo por 1024M</p>
+        <img src="imagenes/Imagen16.png" alt="Imagen16">
+        <img src="imagenes/Imagen17.png" alt="Imagen17">
+
+        <p>Ahora buscamos la línea que pone upload_max_filesize = 2M lo cambiamos a 256M</p>
+        <img src="imagenes/Imagen18.png" alt="Imagen18">
+        <img src="imagenes/Imagen19.png" alt="Imagen19">
+
+        <p>Ahora salimos de ese archivo y nos metemos en otro archivo y realizamos los mismos cambios</p>
+        <pre><code>nano /etc/php/7.4/cli/php.ini</code></pre>
+        <img src="imagenes/Imagen20.png" alt="Imagen20">
+
+        <p>Después de haberlo hecho nos vamos al siguiente archivo: nano /var/www/html/test.php</p>
+        <pre><code>nano /var/www/html/test.php</code></pre>
+        <img src="imagenes/Imagen21.png" alt="Imagen21">
+
+        <p>Y escribimos lo siguiente: &lt;?php phpinfo(); ?&gt;</p>
+        <img src="imagenes/Imagen22.png" alt="Imagen22">
+
+        <p>Reiniciamos apache con el comando: systemctl restart apache2</p>
+        <pre><code>systemctl restart apache2</code></pre>
+        <img src="imagenes/Imagen23.png" alt="Imagen23">
+
+        <p>Y vemos el status con el comando: systemctl status apache2</p>
+        <pre><code>systemctl status apache2</code></pre>
+        <img src="imagenes/Imagen24.png" alt="Imagen24">
+
+        <p>Ahora desde el navegador entramos para comprobar que funciona</p>
+        <img src="imagenes/Imagen25.png" alt="Imagen25">
+    </section>
+
+    <hr>
+
+    <!-- ===== MARIADB ===== -->
+    <section id="mariadb">
+        <h2>Instalación de MariaDB</h2>
+
+        <p>Ahora instalamos mariadb: apt-get -y install mariadb-server</p>
+        <pre><code>apt-get -y install mariadb-server</code></pre>
+        <img src="imagenes/Imagen26.png" alt="Imagen26">
+
+        <p>Ahora con el siguiente comando comprobamos que funciona: systemctl status mariadb</p>
+        <pre><code>systemctl status mariadb</code></pre>
+        <img src="imagenes/Imagen27.png" alt="Imagen27">
+
+        <p>Ahora con el siguiente comando le añadimos una clave: mysql_secure_installation</p>
+        <pre><code>mysql_secure_installation</code></pre>
+        <img src="imagenes/Imagen28.png" alt="Imagen28">
+
+        <p>Entramos a la base de datos</p>
+        <pre><code>mysql -u root -p</code></pre>
+        <img src="imagenes/Imagen29.png" alt="Imagen29">
+
+        <p>Y ahora ejecutamos los siguientes comandos:</p>
+        <img src="imagenes/Imagen30.png" alt="Imagen30">
+        <img src="imagenes/Imagen31.png" alt="Imagen31">
+        <img src="imagenes/Imagen32.png" alt="Imagen32">
+
+        <p>Ahora entramos a https://github.com/OCSInventory-NG/OCSInventory-ocsreports y le damos a la ultima version</p>
+        <img src="imagenes/Imagen32.png" alt="Imagen33">
+    </section>
+
+    <hr>
+
+    <!-- ===== OCS SERVER ===== -->
+    <section id="ocs">
+        <h2>Instalación del servidor OCS Inventory NG</h2>
+
+        <p>Bajamos un poco y copiamos la dirección de enlace del .tar.gz</p>
+        <img src="imagenes/Imagen33.png" alt="Imagen34">
+
+        <p>Entramos en /opt</p>
+        <img src="imagenes/Imagen34.png" alt="Imagen35">
+
+        <p>Y ponemos lo siguiente: wget https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.12.4/OCSNG_UNIX_SERVER-2.12.4.tar.gz</p>
+        <pre><code>wget https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.12.4/OCSNG_UNIX_SERVER-2.12.4.tar.gz</code></pre>
+        <img src="imagenes/Imagen35.png" alt="Imagen36">
+
+        <p>A continuación, descomprimimos el archivo</p>
+        <img src="imagenes/Imagen36.png" alt="Imagen37">
+
+        <p>Y entramos dentro</p>
+        <img src="imagenes/Imagen37.png" alt="Imagen38">
+
+        <p>Ahora ejecutamos el script de instalación</p>
+        <img src="imagenes/Imagen38.png" alt="Imagen39">
+
+        <p>Una vez instalado sin errores ejecutamos los siguientes comandos:</p>
+        <pre><code>a2enconf ocsinventory-reports.conf
+a2enconf z-ocsinventory-server.conf
+a2enconf zz-ocsinventory-restapi.conf</code></pre>
+        <img src="imagenes/Imagen40.png" alt="Imagen40">
+
+        <p>Ahora configuramos el permiso del siguiente directorio.</p>
+        <pre><code>chown -R www-data: /var/lib/ocsinventory-reports/</code></pre>
+        <img src="imagenes/Imagen39.png" alt="Imagen40">
+
+        <p>Ahora reiniciamos el servicio apache y vemos el status</p>
+        <pre><code>systemctl restart apache2
+systemctl status apache2</code></pre>
+        <img src="imagenes/Imagen40.png" alt="Imagen41">
+
+        <p>Buscamos en nuestro buscador nuestra IP del Server/ocsreports y nos aparecerá esta ventana, para meternos como usuario ocs.</p>
+        <img src="imagenes/Imagen41.png" alt="Imagen42">
+
+        <p>Una vez registrados, necesitaremos actualizar nuestra base de datos presionando el botón morado del final.</p>
+        <img src="imagenes/Imagen42.png" alt="Imagen43">
+
+        <p>Presionamos el botón Perform the update.</p>
+        <img src="imagenes/Imagen43.png" alt="Imagen44">
+
+        <p>Y ya se habrá actualizado correctamente la base de datos, y después hacemos clic al botón morado.</p>
+        <img src="imagenes/Imagen44.png" alt="Imagen45">
+
+        <p>Ahora hacemos login como administrador.</p>
+        <img src="imagenes/Imagen46.png" alt="Imagen46">
+
+        <p>Y ya estaremos dentro de nuestra base de datos, y ahora pulsamos Información &gt; Información del servidor.</p>
+        <img src="imagenes/Imagen47.png" alt="Imagen47">
+
+        <p>Instalaremos en nuestro equipo de Windows el agente de GitHub.</p>
+        <img src="imagenes/Imagen48.png" alt="Imagen48">
+    </section>
+
+    <hr>
+
+    <!-- ===== AGENTE WINDOWS ===== -->
+    <section id="agente">
+        <h2>Instalaremos en nuestro equipo de Windows el agente de GitHub.</h2>
+
+        <p>Descargamos el segundo agente de Windows .zip</p>
+        <img src="imagenes/Imagen49.png" alt="Imagen49">
+
+        <p>Una vez instalado, nos vamos a la ruta de la descarga, y ejecutamos el archivo .exe</p>
+        <img src="imagenes/Imagen50.png" alt="Imagen49">
+        <p>Ahora instalaremos el OCS Inventory en nuestro equipo, pulsamos Next.</p>
+        <img src="imagenes/Imagen51.png" alt="Imagen50">
+        <p>Pulsamos I Agree.</p>
+        <img src="imagenes/Imagen52.png" alt="Imagen50">
+        <p>Pulsamos Next.</p>
+        <img src="imagenes/Imagen53.png" alt="Imagen50">
+        <p>En URL del servidor, pondremos la dirección IP que tiene nuestro equipo que hace de servidor y pulsamos Next.</p>
+        <img src="imagenes/Imagen54.png" alt="Imagen50">   
+        <p>Pulsamos Next.</p>
+        <img src="imagenes/Imagen55.png" alt="Imagen50">
+        <p>Habilitamos la opción de lanzar al instante el inventario y pulsamos Next.</p>
+        <img src="imagenes/Imagen56.png" alt="Imagen50">
+        <p>Pulsamos Next.</p>
+        <img src="imagenes/Imagen57.png" alt="Imagen50">
+        <p>En esta pestaña, dejamos la ruta por defecto de la instalación y pulsamos Install.</p>
+        <img src="imagenes/Imagen58.png" alt="Imagen50">
+        <p>Esperamos a que cargue</p>
+        <img src="imagenes/Imagen59.png" alt="Imagen50">
+        <p>Una vez terminada la instalación, pulsamos Finish y abrimos el OCS.</p>
+        <img src="imagenes/Imagen60.png" alt="Imagen50">
+        <p>En la ventana de los reportes de nuestro OCS, nos deberá aparecer el equipo con el que nos acabamos de conectar al servidor.</p>
+        <img src="imagenes/Imagen61.png" alt="Imagen50">
+        <p>Nos muestra información sobre el cliente, y si presionamos en el nombre del dispositivo nos mostrará la información del dispositivo conectado.</p>
+        <img src="imagenes/Imagen62.png" alt="Imagen50">
+        <p>Pulsamos en el apartado de la izquierda a Hardware.</p>
+        <img src="imagenes/Imagen63.png" alt="Imagen50">
+        <p>Y nos mostrará el Hardware del dispositivo que se conectó a nuestro servidor.</p>
+            <img src="imagenes/Imagen64.png" alt="Imagen50">
+    </section>
+
+</div>
+
+<footer>
+    <p>Actividad 2 &ndash; Planificación de las prácticas (OCS) &bull; Darius Fer, Sergio Bonafonte, Adrián Cieras</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
