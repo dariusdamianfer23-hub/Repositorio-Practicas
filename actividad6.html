@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 6 – Investigación NAS</title>
+    <link rel="stylesheet" href="Estilos/styles.css">
+    <script defer src="JavaScript/app.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">Prácticas Redes & Sistemas</div>
+    <button class="menu-btn">☰</button>
+    <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="actividad1.html">Actividad 1</a></li>
+        <li><a href="actividad2.html">Actividad 2</a></li>
+        <li><a href="actividad3.html">Actividad 3</a></li>
+        <li><a href="actividad4.html">Actividad 4</a></li>
+        <li><a href="actividad5.html">Actividad 5</a></li>
+        <li><a class="active" href="actividad6.html">Actividad 6</a></li>
+        <li><a href="actividad 8.html">Actividad 8</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+
+    <h1>Actividad 6: Investigación NAS (Sistemas Operativos, Backups y FTPS)</h1>
+
+    <p class="quote">
+        “Los dispositivos NAS se han consolidado como una solución clave en entornos domésticos, PYMES y corporativos…”
+    </p>
+
+    <!-- 1. INTRODUCCIÓN -->
+    
+    <section>
+        <h2>1. Introducción</h2>
+        <p>
+            Un NAS (Network Attached Storage) es un dispositivo de almacenamiento conectado a la red que permite
+            compartir archivos, gestionar usuarios, realizar copias de seguridad y ejecutar servicios adicionales.
+        </p>
+    </section>
+
+    <!-- 2. SISTEMAS OPERATIVOS NAS -->
+    
+    <section>
+        <h2>2. Sistemas Operativos para NAS</h2>
+
+        <h3>2.1 Factores clave</h3>
+        <ul>
+            <li>Interfaz de usuario</li>
+            <li>Nivel técnico requerido</li>
+            <li>Funciones adicionales (Docker, VMs, VPN…)</li>
+            <li>Seguridad</li>
+            <li>Compatibilidad de hardware</li>
+        </ul>
+
+        <h3>2.2 Principales sistemas operativos</h3>
+
+        <h4>TrueNAS (Core y SCALE)</h4>
+        <p>
+            Basado en ZFS, muy robusto, ideal para entornos profesionales.
+        </p>
+
+        <h4>Synology DSM</h4>
+        <p>
+            Interfaz muy intuitiva, ecosistema de apps propio.
+        </p>
+
+        <h4>QNAP QTS / QuTS hero</h4>
+        <p>
+            Muy completo, con soporte para virtualización y contenedores.
+        </p>
+
+        <h4>Unraid</h4>
+        <p>
+            Flexible, permite mezclar discos de diferentes tamaños.
+        </p>
+
+        <h4>OpenMediaVault</h4>
+        <p>
+            Gratuito, ideal para hardware reciclado.
+        </p>
+    </section>
+
+    <!-- 3. COPIAS DE SEGURIDAD -->
+    
+    <section>
+        <h2>3. Copias de Seguridad en NAS</h2>
+
+        <h3>3.1 Regla 3-2-1</h3>
+        <ul>
+            <li>3 copias de los datos</li>
+            <li>2 tipos de almacenamiento</li>
+            <li>1 copia fuera del sitio</li>
+        </ul>
+
+        <h3>3.2 Tipos de backup</h3>
+        <ul>
+            <li>Completo</li>
+            <li>Incremental</li>
+            <li>Diferencial</li>
+            <li>Snapshots</li>
+            <li>Completo sintético</li>
+        </ul>
+
+        <h3>3.3 Métodos de backup</h3>
+        <ul>
+            <li>NAS a NAS (rsync, SMB)</li>
+            <li>Backup en la nube (S3, Azure, Backblaze)</li>
+            <li>Backup USB</li>
+            <li>Backup desde PC (Time Machine, Historial de archivos…)</li>
+        </ul>
+
+        <h3>3.4 Herramientas nativas</h3>
+        <ul>
+            <li>Synology Hyper Backup</li>
+            <li>QNAP HBS</li>
+            <li>ASUSTOR Backup Plan</li>
+            <li>Rsync</li>
+            <li>Veeam Agent</li>
+        </ul>
+
+        <h3>3.5 Protección frente a ransomware</h3>
+        <ul>
+            <li>Snapshots automáticos</li>
+            <li>Permisos restringidos</li>
+            <li>Backups offline</li>
+            <li>Actualizaciones frecuentes</li>
+            <li>Bloqueo por intentos fallidos</li>
+        </ul>
+    </section>
+
+    <!-- 4. FTPS -->
+
+    <section>
+        <h2>4. Aplicaciones FTPS para subir archivos al NAS</h2>
+
+        <h3>4.1 FTPS vs FTP vs SFTP</h3>
+        <ul>
+            <li>FTP → sin cifrado</li>
+            <li>FTPS → FTP + SSL/TLS</li>
+            <li>SFTP → basado en SSH</li>
+        </ul>
+
+        <h3>4.2 Clientes FTPS</h3>
+        <ul>
+            <li>FileZilla</li>
+            <li>WinSCP</li>
+            <li>Cyberduck</li>
+            <li>CloudMounter</li>
+            <li>Classic FTP</li>
+        </ul>
+
+        <h3>4.3 Configuración FTPS en un NAS</h3>
+        <ol>
+            <li>Activar servicio FTP</li>
+            <li>Habilitar FTPS</li>
+            <li>Configurar certificado SSL</li>
+            <li>Abrir puertos</li>
+            <li>Crear usuarios</li>
+        </ol>
+
+        <h3>4.4 Recomendaciones de seguridad</h3>
+        <ul>
+            <li>Usar FTPS o SFTP siempre</li>
+            <li>Certificados válidos</li>
+            <li>Restringir IPs</li>
+            <li>2FA</li>
+            <li>Auditoría de accesos</li>
+        </ul>
+    </section>
+
+
+</main>
+
+<footer>
+    <p>© 2026 · Darius Fer · Sergio Bonafonte · Adrián Cieras</p>
+</footer>
+
+</body>
+</html>
