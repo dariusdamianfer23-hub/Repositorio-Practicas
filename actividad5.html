@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 5 – Configuración de servicios</title>
+    <link rel="stylesheet" href="Estilos/styles.css">
+    <script defer src="JavaScript/app.js"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">Prácticas Redes & Sistemas</div>
+    <button class="menu-btn">☰</button>
+    <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="actividad1.html">Actividad 1</a></li>
+        <li><a href="actividad2.html">Actividad 2</a></li>
+        <li><a href="actividad3.html">Actividad 3</a></li>
+        <li><a href="actividad4.html">Actividad 4</a></li>
+        <li><a class="active" href="actividad5.html">Actividad 5</a></li>
+        <li><a href="actividad6.html">Actividad 6</a></li>
+        <li><a href="actividad 8.html">Actividad 8</a></li>
+    </ul>
+</nav>
+
+<!-- CONTENIDO -->
+<main class="container">
+
+    <h1>Actividad 5 – Configuración de servicios</h1>
+
+
+    <h2>Índice</h2>
+    <ul>
+        <li>Configuración del servidor WEB</li>
+        <li>Instalación del servicio FTP</li>
+    </ul>
+
+    <!-- CONFIGURACIÓN DEL SERVIDOR WEB -->
+    
+    <h2>Configuración del servidor WEB</h2>
+
+    <p>Comprobamos el estado de apache2.</p>
+
+    <div>
+        <p><strong>Captura:</strong> Estado de Apache2</p>
+         <img src="imagenes/ApacheStatus.png"> 
+    </div>
+
+    <p>Entramos al archivo .html con el siguiente comando:</p>
+
+    <div>
+        <p><strong>Captura:</strong> Terminal accediendo a /var/www/html</p>
+         <img src="imagenes/AccesoApache.png"> 
+    </div>
+
+    <p>Deberíamos ver algo similar a lo siguiente:</p>
+
+    <div>
+        <p><strong>Captura:</strong> Contenido del archivo index.html</p>
+         <img src="imagenes/ApacheIndice.png"> 
+    </div>
+
+    <p>En un buscador ponemos la IP del servidor y nos conectamos al servidor Apache.</p>
+
+    <div>
+        <p><strong>Captura:</strong> Página por defecto de Apache2</p>
+         <img src="Imagenes/ComprobacioApache.png"> 
+    </div>
+
+    <!-- INSTALACIÓN DEL SERVICIO FTP -->
+
+    <h2>Instalación del servicio FTP</h2>
+
+    <p>Instalamos el servicio FTP con el siguiente comando:</p>
+
+    <pre>
+sudo apt install vsftpd -y
+    </pre>
+
+    <h3>Esperamos a que se instale</h3>
+
+    <div>
+        <p><strong>Captura:</strong> Instalación de vsftpd</p>
+        <img src="Imagenes/InstalFTP.png">
+    </div>
+
+    <p>Ahora verificamos el estado:</p>
+
+    <pre>
+sudo systemctl status vsftpd
+    </pre>
+
+    <div>
+        <p><strong>Captura:</strong> Estado del servicio vsftpd</p>
+         <img src="imagenes/StatusFTP.png"> 
+    </div>
+
+    <p>Creamos un nuevo usuario para el FTP.</p>
+
+    <div>
+        <p><strong>Captura:</strong> Creación del usuario FTP</p>
+         <img src="imagenes/UsuarioFTP.png"> 
+    </div>
+
+    <p>Creamos una carpeta de FTP y le asignamos los permisos:</p>
+
+    <pre>
+sudo mkdir /home/practica/ftp
+sudo chmod a-w /home/practica/ftp
+sudo chown nobody:nogroup /home/practica/ftp
+    </pre>
+
+    <p>
+        En el explorador de archivos ponemos la IP de nuestro servidor y nos aparecerá la siguiente ventana:
+    </p>
+
+    <div>
+        <p><strong>Captura:</strong> Inicio de sesión FTP desde Windows</p>
+         <img src="imagenes/AccespFTP.png"> 
+    </div>
+
+    <p>
+        Y una vez iniciada la sesión en el servidor FTP, nos aparecerá la carpeta que hemos creado correctamente.
+    </p>
+
+    <div>
+        <p><strong>Captura:</strong> Carpeta FTP accesible</p>
+         <img src="imagenes/AccesoConcedidoFTP.png"> 
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 · Darius Fer · Sergio Bonafonte · Adrián Cieras</p>
+</footer>
+
+</body>
+</html>
