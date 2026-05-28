@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 8 – Memoria de Actividad en el NAS</title>
+    <link rel="stylesheet" href="Estilos/styles.css">
+    <script defer src="JavaScript/app.js"></script>
+</head>
+<body>
+    <!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">Prácticas Redes & Sistemas</div>
+    <button class="menu-btn">☰</button>
+    <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="actividad1.html">Actividad 1</a></li>
+        <li><a href="actividad2.html">Actividad 2</a></li>
+        <li><a href="actividad3.html">Actividad 3</a></li>
+        <li><a href="actividad4.html">Actividad 4</a></li>
+        <li><a href="actividad5.html">Actividad 5</a></li>
+        <li><a href="actividad6.html">Actividad 6</a></li>
+        <li><a class="active" href="actividad 8.html">Actividad 8</a></li>
+    </ul>
+</nav>
+
+<!-- CONTENIDO -->
+<main class="container">
+    <h1>Breve descripción</h1>
+    <p>En esta actividad describiremos el proceso de configuración de un servidor NAS con OpenMediaVault y cómo 
+    subir archivos al mismo. Primero se accede a la interfaz web del NAS mediante su IP, usando las credenciales 
+    de administrador. Una vez dentro, se habilita el servicio SMB/CIFS y se configura el grupo de trabajo. Luego se 
+    crea una carpeta compartida asignándole un nombre, se crea un usuario y se configuran los permisos para que dicha carpeta sea accesible 
+    en red. </p>
+    <p>Para subir documentos al NAS existen dos métodos: el primero consiste en acceder desde el explorador de archivos de 
+    Windows usando la IP del NAS y las credenciales del usuario creado, arrastrando y soltando los archivos en la carpeta compartida. El 
+    segundo método es por línea de comandos, utilizando el comando scp desde PowerShell para transferir archivos directamente a una ruta 
+    absoluta del servidor.</p>
+
+    <h2>Documento PDF</h2>
+
+        <a href="Actividad 8 Memoria de Actividad en el NAS.pdf" target="_blank">
+         Abrir PDF
+        </a>
+        <br>
+</main>
+<footer>
+    <p>© 2026 · Darius Fer · Sergio Bonafonte · Adrián Cieras</p>
+</footer>
+</body>
+</html>
